@@ -36,7 +36,27 @@ foreach($keys as $key) {
         $values[$key] = $_SESSION[$key] = $_POST[$key];
 }
 ?>
-<form method="post">
+<?php if ($_SERVER['REQUEST_METHOD'] == 'POST') : ?>
+<?php
+    $date1 = "{$values['year1']}-{$values['month1']}-{$values['day1']}";
+    $date2 = "{$values['year2']}-{$values['month2']}-{$values['day2']}";
+    $time1 = strtotime($date1);
+    $time2 = strtotime($date2);
+    $dateNew1 = date('Y-n-j', $time1);
+    $dateNew2 = date('Y-n-j', $time2);
+    $timeDiff = $time2 - $time1;
+    $daysCount = $timeDiff / (60 * 60 * 24);
+?>
+<?php if ($date1 != $dateNew1) : ?>
+    <div class="badge text-bg-danger">Помилка введення першої дати!</div>
+<?php endif; ?>
+
+<?php if ($date2 != $dateNew2) : ?>
+    <div class="badge text-bg-danger">Помилка введення другої дати!</div>
+<?php endif; ?>
+<div>Різниця між датами <?=$date1 ?> та <?=$date2 ?> складає <?=abs($daysCount) ?> днів</div>
+<?php endif; ?>
+<form method="post" action="">
     <table>
         <tr>
             <td>Дата 1:</td>
