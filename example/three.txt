@@ -1,0 +1,6 @@
+day1 = 31
+day2 = 17
+month1 = 4
+month2 = 2
+year1 = 1976
+year2 = 1976
