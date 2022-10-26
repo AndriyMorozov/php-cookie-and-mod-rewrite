@@ -1,0 +1,7 @@
+
+DirectoryIndex index.php index.html
+AddDefaultCharset utf-8
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . error.php

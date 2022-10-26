@@ -1,0 +1,28 @@
+
+.menu, .menu2  {
+    display: flex;
+    width: 300px;
+}
+.menu2 > a {
+    display: inline-block;
+    padding:10px;
+}
+.menu > div {
+    border:1px solid black;
+    padding:30px;
+}
+.menu > div.selected {
+    border-width:10px;
+}
+.red {
+    color: red;
+    background-color: rgba(255,14,10,0.14);
+}
+.green {
+    color: green;
+    background-color: rgba(100, 255, 10, 0.14);
+}
+.blue {
+    color: blue;
+    background-color: rgba(10, 79, 255, 0.14);
+}
